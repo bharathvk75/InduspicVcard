@@ -56,7 +56,7 @@ body {
   justify-content: center;
 }
 
-/* ===== Completely Transparent Card Surface (Direct Grainient WebGL Wallpaper) ===== */
+/* ===== Transparent Card Surface (Direct WebGL Wallpaper View) ===== */
 .vcard {
   position: relative;
   width: 100%;
@@ -66,12 +66,13 @@ body {
   height: 100%;
 }
 
-/* ===== Card Inner ===== */
+/* ===== Card Inner with Balanced Mobile Spacing ===== */
 .vcard-inner {
-  padding: clamp(18px, 3.5vh, 28px) clamp(16px, 4vw, 26px) clamp(14px, 2.5vh, 24px);
+  padding: clamp(20px, 4vh, 32px) clamp(18px, 4.5vw, 28px) clamp(20px, 4vh, 30px);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between; /* Distributes elements vertically on mobile screens */
   gap: 0;
   height: 100%;
   overflow-y: auto;
@@ -84,20 +85,20 @@ body {
   display: none;
 }
 
-/* ===== Header Identity (Logo Side-by-Side to Left of Text) ===== */
+/* ===== Header Identity (No Box Container, Pure Transparent Row) ===== */
 .header-identity-sidebyside {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
   width: 100%;
-  margin-bottom: clamp(6px, 1vh, 12px);
-  padding: 8px 14px;
-  border-radius: 16px;
-  background: rgba(0, 0, 0, 0.25) !important;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: clamp(6px, 1.2vh, 12px);
+  padding: 0 !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .company-identity-text {
@@ -108,8 +109,8 @@ body {
 
 /* Bare Logo to the Left */
 .logo-bare {
-  width: clamp(38px, 8.5vw, 48px);
-  height: clamp(38px, 8.5vw, 48px);
+  width: clamp(40px, 9vw, 50px);
+  height: clamp(40px, 9vw, 50px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,12 +126,12 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
 }
 
-/* Strict ONE SINGLE LINE Company Name & Division (High Contrast White) */
+/* ALL WHITE ONE SINGLE LINE Company Name & Division */
 .company-name-oneline {
-  font-size: clamp(11px, 2.8vw, 14.5px);
+  font-size: clamp(11.5px, 3vw, 15px);
   font-weight: 700;
   letter-spacing: -0.01em;
   color: #FFFFFF !important;
@@ -139,7 +140,7 @@ body {
   display: flex;
   align-items: center;
   gap: 4px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 .company-name-oneline .brand-title {
@@ -148,42 +149,41 @@ body {
 }
 
 .company-name-oneline .division-title {
-  color: #FFB74D !important;
+  color: #FFFFFF !important;
   font-weight: 700;
 }
 
-/* Description Text — High Contrast */
+/* Description Text — Clean White Text with Drop Shadow (No Box Container) */
 .company-description {
-  font-size: clamp(11.5px, 2.8vw, 13px);
+  font-size: clamp(12px, 3vw, 13.5px);
   font-weight: 500;
   line-height: 1.55;
   color: #FFFFFF !important;
   text-align: center;
-  max-width: 420px;
-  margin-top: clamp(4px, 0.8vh, 8px);
-  padding: 8px 14px;
-  border-radius: 12px;
-  background: rgba(0, 0, 0, 0.2) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 440px;
+  margin-top: clamp(4px, 1vh, 8px);
+  padding: 0 !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 /* ===== Separator ===== */
 .separator {
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25) 20%, rgba(255, 255, 255, 0.25) 80%, transparent);
-  margin: clamp(8px, 1.2vh, 14px) 0 clamp(8px, 1.2vh, 12px);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3) 20%, rgba(255, 255, 255, 0.3) 80%, transparent);
+  margin: clamp(10px, 1.6vh, 16px) 0 clamp(10px, 1.6vh, 14px);
   flex-shrink: 0;
 }
 
-/* ===== Action Buttons — High Contrast Cards ===== */
+/* ===== Action Buttons — Single Column with Generous Mobile Spacing ===== */
 .actions-grid {
   display: flex;
   flex-direction: column;
-  gap: clamp(6px, 1vh, 8px);
+  gap: clamp(8px, 1.4vh, 11px);
   width: 100%;
 }
 
@@ -193,12 +193,12 @@ body {
   align-items: center;
   justify-content: flex-start;
   gap: 12px;
-  padding: clamp(11px, 1.4vh, 13px) 16px;
+  padding: clamp(12px, 1.6vh, 14px) 18px;
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   background: rgba(255, 255, 255, 0.94) !important;
   color: #1C1C1E !important;
-  font-size: clamp(13px, 3.2vw, 14px);
+  font-size: clamp(13.5px, 3.4vw, 14.5px);
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
@@ -206,16 +206,16 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  min-height: 46px;
+  min-height: 48px;
   width: 100%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
 
 .action-btn:hover {
   background: #FFFFFF !important;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
 }
 
 .action-btn:active {
@@ -247,13 +247,13 @@ body {
 .action-btn--primary {
   background: #000000 !important;
   color: #FFFFFF !important;
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
 }
 
 .action-btn--primary:hover {
   background: #1A1A1A !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45);
 }
 
 /* WhatsApp */
@@ -275,20 +275,20 @@ body {
 .map-preview {
   display: block;
   width: 100%;
-  margin-top: clamp(6px, 1vh, 8px);
+  margin-top: clamp(8px, 1.4vh, 12px);
   border-radius: 14px;
   overflow: hidden;
   text-decoration: none;
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   cursor: pointer;
   transition: box-shadow 0.2s ease;
   flex-shrink: 0;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
 }
 
 .map-preview:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.25);
 }
 
 .map-preview:active {
@@ -297,7 +297,7 @@ body {
 
 .map-preview__embed {
   width: 100%;
-  height: clamp(95px, 15vh, 130px);
+  height: clamp(100px, 16vh, 135px);
   background: #E8E8ED;
   overflow: hidden;
 }
@@ -316,7 +316,7 @@ body {
   align-items: flex-end;
   justify-content: flex-start;
   padding: 10px 14px;
-  background: linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, 0.55) 100%);
 }
 
 .map-preview__badge {
@@ -337,25 +337,25 @@ body {
 /* ===== Contact Info ===== */
 .contact-info {
   width: 100%;
-  margin-top: clamp(8px, 1.2vh, 12px);
+  margin-top: clamp(10px, 1.6vh, 14px);
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .contact-row {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: clamp(7px, 1vh, 10px) 14px;
+  padding: clamp(8px, 1.2vh, 11px) 14px;
   border-radius: 12px;
   text-decoration: none;
   color: #1C1C1E !important;
-  background: rgba(255, 255, 255, 0.92) !important;
+  background: rgba(255, 255, 255, 0.94) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
   transition: background 0.15s ease, transform 0.15s ease;
 }
 
@@ -416,26 +416,26 @@ body {
   justify-content: center;
   gap: 8px;
   width: 100%;
-  padding: clamp(11px, 1.5vh, 14px) 16px;
-  margin-top: clamp(8px, 1.2vh, 12px);
+  padding: clamp(12px, 1.6vh, 14px) 16px;
+  margin-top: clamp(10px, 1.6vh, 14px);
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   background: #007AFF !important;
   color: #FFFFFF !important;
-  font-size: clamp(13px, 3.2vw, 14px);
+  font-size: clamp(13.5px, 3.4vw, 14.5px);
   font-weight: 600;
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
   transition: background 0.15s ease, box-shadow 0.15s ease;
-  min-height: 46px;
-  box-shadow: 0 4px 14px rgba(0, 122, 255, 0.35);
+  min-height: 48px;
+  box-shadow: 0 4px 16px rgba(0, 122, 255, 0.35);
 }
 
 .save-contact-btn:hover {
   background: #0062CC !important;
-  box-shadow: 0 6px 18px rgba(0, 122, 255, 0.45);
+  box-shadow: 0 6px 20px rgba(0, 122, 255, 0.45);
 }
 
 .save-contact-btn:active {

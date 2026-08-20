@@ -138,12 +138,12 @@ interface ContextInfo {
 const ctxMap = new WeakMap<HTMLElement, ContextInfo>();
 
 export default function Grainient({
-  timeSpeed = 0.25,
-  colorBalance = 0.0,
-  warpStrength = 1.0,
+  timeSpeed = 0.35,
+  colorBalance = -0.07,
+  warpStrength = 1.2,
   warpFrequency = 5.0,
-  warpSpeed = 2.0,
-  warpAmplitude = 50.0,
+  warpSpeed = 2.3,
+  warpAmplitude = 36.0,
   blendAngle = 0.0,
   blendSoftness = 0.05,
   rotationAmount = 500.0,
@@ -157,9 +157,9 @@ export default function Grainient({
   centerX = 0.0,
   centerY = 0.0,
   zoom = 0.9,
-  color1 = '#025f1d',
-  color2 = '#eb702d',
-  color3 = '#3dbea5',
+  color1 = '#189b3e',
+  color2 = '#e77c42',
+  color3 = '#7c8d8a',
   className = '',
 }: GrainientProps) {
   const containerRef = useRef<HTMLDivElement>(null);
