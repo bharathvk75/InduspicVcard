@@ -18,7 +18,7 @@ export default function VCard() {
     <div ref={cardRef} className="vcard-container">
       <div className="vcard">
         <div className="vcard-inner">
-          <div className="header-identity-row" data-gsap="header-row">
+          <div className="header-identity-centered" data-gsap="header-identity">
             <Logo />
             <CompanyIdentity />
           </div>
