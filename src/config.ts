@@ -1,3 +1,5 @@
+import induspicLogo from './assets/induspic-logo.png';
+
 export interface CompanyInfo {
   name: string;
   division: string;
@@ -29,7 +31,7 @@ export const companyInfo: CompanyInfo = {
   primaryContact: 'ANBU SOMAN',
   alternativePhone: '+91 6363447946',
   alternativeContact: 'BHARATH ABHINESH A',
-  logoSrc: '/induspic-logo.png',
+  logoSrc: induspicLogo,
 };
 
 export function generateVCF(): string {
