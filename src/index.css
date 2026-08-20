@@ -124,21 +124,26 @@ body {
   display: none;
 }
 
-/* ===== Header Identity (Centered Logo & Title) ===== */
-.header-identity-centered {
+/* ===== Header Identity (Logo Side-by-Side to Left of Text) ===== */
+.header-identity-sidebyside {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  gap: 14px;
   width: 100%;
   margin-bottom: clamp(6px, 1vh, 12px);
 }
 
-/* Bare Centered Logo */
+.company-identity-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Bare Logo to the Left */
 .logo-bare {
-  width: clamp(60px, 13vw, 80px);
-  height: clamp(60px, 13vw, 80px);
+  width: clamp(52px, 11vw, 68px);
+  height: clamp(52px, 11vw, 68px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,35 +152,35 @@ body {
   box-shadow: none !important;
   border: none !important;
   padding: 0 !important;
-  margin-bottom: clamp(6px, 1vh, 10px);
+  margin-bottom: 0 !important;
 }
 
 .logo-bare img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 3px 6px rgba(181, 69, 42, 0.2));
+  filter: drop-shadow(0 2px 4px rgba(181, 69, 42, 0.18));
 }
 
-/* Centered Company Name & Division */
+/* Left-Aligned Company Name & Division Beside Logo */
 .company-name {
-  font-size: clamp(18px, 4.5vw, 22px);
+  font-size: clamp(16px, 4vw, 19px);
   font-weight: 700;
   letter-spacing: -0.01em;
   color: #1C1C1E !important;
-  text-align: center;
-  line-height: 1.2;
+  text-align: left;
+  line-height: 1.15;
 }
 
 .division-label {
-  font-size: clamp(18px, 4.5vw, 22px);
+  font-size: clamp(16px, 4vw, 19px);
   font-weight: 700;
   letter-spacing: -0.01em;
   color: #B5452A !important;
-  margin-top: 2px;
-  text-align: center;
+  margin-top: 1px;
+  text-align: left;
   text-transform: none;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .company-description {
