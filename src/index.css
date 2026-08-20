@@ -108,7 +108,7 @@ body {
 
 /* ===== Card Inner ===== */
 .vcard-inner {
-  padding: clamp(18px, 3.5vh, 28px) clamp(18px, 4.5vw, 28px) clamp(14px, 2.5vh, 24px);
+  padding: clamp(18px, 3.5vh, 28px) clamp(16px, 4vw, 26px) clamp(14px, 2.5vh, 24px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -129,21 +129,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 10px;
   width: 100%;
   margin-bottom: clamp(6px, 1vh, 12px);
 }
 
 .company-identity-text {
   display: flex;
-  flex-direction: column;
-  text-align: left;
+  align-items: center;
+  min-width: 0;
 }
 
 /* Bare Logo to the Left */
 .logo-bare {
-  width: clamp(52px, 11vw, 68px);
-  height: clamp(52px, 11vw, 68px);
+  width: clamp(38px, 8vw, 48px);
+  height: clamp(38px, 8vw, 48px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -162,25 +162,27 @@ body {
   filter: drop-shadow(0 2px 4px rgba(181, 69, 42, 0.18));
 }
 
-/* Left-Aligned Company Name & Division Beside Logo */
-.company-name {
-  font-size: clamp(16px, 4vw, 19px);
+/* Strict ONE SINGLE LINE Company Name & Division */
+.company-name-oneline {
+  font-size: clamp(11px, 2.8vw, 14.5px);
   font-weight: 700;
   letter-spacing: -0.01em;
   color: #1C1C1E !important;
-  text-align: left;
-  line-height: 1.15;
+  line-height: 1.2;
+  white-space: nowrap; /* Forces ONE SINGLE LINE */
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
-.division-label {
-  font-size: clamp(16px, 4vw, 19px);
+.company-name-oneline .brand-title {
+  color: #1C1C1E !important;
   font-weight: 700;
-  letter-spacing: -0.01em;
+}
+
+.company-name-oneline .division-title {
   color: #B5452A !important;
-  margin-top: 1px;
-  text-align: left;
-  text-transform: none;
-  line-height: 1.15;
+  font-weight: 700;
 }
 
 .company-description {
