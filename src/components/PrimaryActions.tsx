@@ -1,14 +1,14 @@
 import { Phone } from 'lucide-react';
 import { companyInfo } from '../config';
 
-/* ===== Official Modern 4-Color Gmail Logo SVG ===== */
+/* ===== Official HD Gmail Logo SVG ===== */
 function GmailLogo() {
   return (
     <svg viewBox="0 0 24 24" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#EA4335" d="M12 12.713L2.257 5.097A1.5 1.5 0 0 1 3.5 4h17a1.5 1.5 0 0 1 1.243 1.097L12 12.713z"/>
-      <path fill="#4285F4" d="M22 6.5v11.5a1.5 1.5 0 0 1-1.5 1.5H17V9.5L12 13.5 7 9.5V19.5H3.5A1.5 1.5 0 0 1 2 18V6.5l10 7.5 10-7.5z"/>
-      <path fill="#34A853" d="M2 18V9.5L7 13.5V19.5H3.5A1.5 1.5 0 0 1 2 18z"/>
-      <path fill="#FBBC05" d="M22 18a1.5 1.5 0 0 1-1.5 1.5H17V13.5l5-4V18z"/>
+      <path fill="#4285F4" d="M5 19h14a2 2 0 002-2V7.5L12 14 3 7.5V17a2 2 0 002 2z"/>
+      <path fill="#EA4335" d="M19 4H5a2 2 0 00-2 2v1.5l9 6.5 9-6.5V6a2 2 0 00-2-2z"/>
+      <path fill="#34A853" d="M19 19a2 2 0 002-2V7.5L14 12.5v6.5h5z"/>
+      <path fill="#FBBC05" d="M5 19a2 2 0 01-2-2V7.5L10 12.5v6.5H5z"/>
     </svg>
   );
 }
