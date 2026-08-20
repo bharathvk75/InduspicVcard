@@ -18,8 +18,10 @@ export default function VCard() {
     <div ref={cardRef} className="vcard-container">
       <div className="vcard">
         <div className="vcard-inner">
-          <Logo />
-          <CompanyIdentity />
+          <div className="header-identity-row" data-gsap="header-row">
+            <Logo />
+            <CompanyIdentity />
+          </div>
           <Description />
           <div className="separator" />
           <PrimaryActions />
