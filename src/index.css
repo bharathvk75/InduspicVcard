@@ -31,8 +31,8 @@ html, body, #root {
   height: 100dvh;
   height: 100vh;
   overflow: hidden;
-  background-color: #EFEFEF !important;
-  color: #1C1C1E;
+  background: transparent !important;
+  color: #FFFFFF;
 }
 
 @supports (height: 100dvh) {
@@ -43,43 +43,6 @@ html, body, #root {
 
 body {
   overscroll-behavior: none;
-}
-
-/* ===== Vivid Industrial Brand Ambient Background (Terracotta Red & Olive Green) ===== */
-.ambient-bg {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 15% 15%, rgba(181, 69, 42, 0.25) 0%, transparent 65%),
-    radial-gradient(ellipse 80% 60% at 85% 85%, rgba(74, 90, 43, 0.28) 0%, transparent 65%),
-    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.75) 0%, transparent 80%),
-    linear-gradient(135deg, #F5F6F8 0%, #E8EBF0 50%, #DFE3E8 100%) !important;
-  pointer-events: none;
-}
-
-/* Industrial Blueprint Micro-Grid Pattern Overlay */
-.ambient-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(181, 69, 42, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(74, 90, 43, 0.08) 1px, transparent 1px);
-  background-size: 32px 32px;
-  pointer-events: none;
-  opacity: 0.9;
-}
-
-/* Subtle texture noise overlay */
-.ambient-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  opacity: 0.25;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
-  background-size: 256px 256px;
-  pointer-events: none;
 }
 
 /* ===== Full-Screen Container ===== */
@@ -93,17 +56,14 @@ body {
   justify-content: center;
 }
 
-/* ===== Translucent Glass Card Surface (Background Shines Through) ===== */
+/* ===== Completely Transparent Card Surface (Direct Grainient WebGL Wallpaper) ===== */
 .vcard {
   position: relative;
   width: 100%;
   max-width: 560px;
-  background: rgba(255, 255, 255, 0.72) !important;
-  backdrop-filter: blur(30px) saturate(1.4);
-  -webkit-backdrop-filter: blur(30px) saturate(1.4);
+  background: transparent !important;
   overflow: hidden;
   height: 100%;
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.06);
 }
 
 /* ===== Card Inner ===== */
@@ -129,9 +89,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   width: 100%;
   margin-bottom: clamp(6px, 1vh, 12px);
+  padding: 8px 14px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .company-identity-text {
@@ -142,8 +108,8 @@ body {
 
 /* Bare Logo to the Left */
 .logo-bare {
-  width: clamp(38px, 8vw, 48px);
-  height: clamp(38px, 8vw, 48px);
+  width: clamp(38px, 8.5vw, 48px);
+  height: clamp(38px, 8.5vw, 48px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -159,52 +125,61 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 2px 4px rgba(181, 69, 42, 0.18));
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
 }
 
-/* Strict ONE SINGLE LINE Company Name & Division */
+/* Strict ONE SINGLE LINE Company Name & Division (High Contrast White) */
 .company-name-oneline {
   font-size: clamp(11px, 2.8vw, 14.5px);
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: #1C1C1E !important;
+  color: #FFFFFF !important;
   line-height: 1.2;
-  white-space: nowrap; /* Forces ONE SINGLE LINE */
+  white-space: nowrap;
   display: flex;
   align-items: center;
   gap: 4px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .company-name-oneline .brand-title {
-  color: #1C1C1E !important;
+  color: #FFFFFF !important;
   font-weight: 700;
 }
 
 .company-name-oneline .division-title {
-  color: #B5452A !important;
+  color: #FFB74D !important;
   font-weight: 700;
 }
 
+/* Description Text — High Contrast */
 .company-description {
   font-size: clamp(11.5px, 2.8vw, 13px);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.55;
-  color: #636366 !important;
+  color: #FFFFFF !important;
   text-align: center;
   max-width: 420px;
   margin-top: clamp(4px, 0.8vh, 8px);
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.2) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* ===== Separator ===== */
 .separator {
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(181, 69, 42, 0.15) 20%, rgba(74, 90, 43, 0.15) 80%, transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25) 20%, rgba(255, 255, 255, 0.25) 80%, transparent);
   margin: clamp(8px, 1.2vh, 14px) 0 clamp(8px, 1.2vh, 12px);
   flex-shrink: 0;
 }
 
-/* ===== Action Buttons — Single Column ===== */
+/* ===== Action Buttons — High Contrast Cards ===== */
 .actions-grid {
   display: flex;
   flex-direction: column;
@@ -220,11 +195,11 @@ body {
   gap: 12px;
   padding: clamp(11px, 1.4vh, 13px) 16px;
   border-radius: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.94) !important;
   color: #1C1C1E !important;
   font-size: clamp(13px, 3.2vw, 14px);
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
   transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
@@ -233,12 +208,14 @@ body {
   touch-action: manipulation;
   min-height: 46px;
   width: 100%;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .action-btn:hover {
   background: #FFFFFF !important;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
 .action-btn:active {
@@ -268,26 +245,26 @@ body {
 
 /* Primary CTA — Call */
 .action-btn--primary {
-  background: #1C1C1E !important;
+  background: #000000 !important;
   color: #FFFFFF !important;
-  border-color: transparent;
-  box-shadow: 0 2px 10px rgba(28, 28, 30, 0.18);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 
 .action-btn--primary:hover {
-  background: #2C2C2E !important;
-  box-shadow: 0 4px 14px rgba(28, 28, 30, 0.28);
+  background: #1A1A1A !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
 }
 
 /* WhatsApp */
 .action-btn--whatsapp {
-  background: rgba(240, 255, 244, 0.95) !important;
-  color: #1C1C1E !important;
-  border-color: rgba(37, 211, 102, 0.25);
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  border: 1.5px solid #25D366 !important;
 }
 
 .action-btn--whatsapp:hover {
-  background: #E4FCE9 !important;
+  background: #F0FFF4 !important;
 }
 
 .action-btn--whatsapp .btn-icon svg {
@@ -303,14 +280,15 @@ body {
   overflow: hidden;
   text-decoration: none;
   position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   cursor: pointer;
   transition: box-shadow 0.2s ease;
   flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
 }
 
 .map-preview:hover {
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
 .map-preview:active {
@@ -328,7 +306,7 @@ body {
   width: 100%;
   height: 100%;
   display: block;
-  filter: saturate(0.7) brightness(1.02);
+  filter: saturate(0.8) brightness(1.02);
 }
 
 .map-preview__overlay {
@@ -338,7 +316,7 @@ body {
   align-items: flex-end;
   justify-content: flex-start;
   padding: 10px 14px;
-  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.4) 100%);
+  background: linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, 0.5) 100%);
 }
 
 .map-preview__badge {
@@ -362,22 +340,27 @@ body {
   margin-top: clamp(8px, 1.2vh, 12px);
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
 }
 
 .contact-row {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: clamp(6px, 0.9vh, 9px) 12px;
-  border-radius: 10px;
+  padding: clamp(7px, 1vh, 10px) 14px;
+  border-radius: 12px;
   text-decoration: none;
-  color: #3A3A3C !important;
-  transition: background 0.15s ease;
+  color: #1C1C1E !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.15s ease, transform 0.15s ease;
 }
 
 .contact-row:hover {
-  background: rgba(0, 0, 0, 0.04) !important;
+  background: #FFFFFF !important;
 }
 
 .contact-row:active {
@@ -387,7 +370,7 @@ body {
 .contact-row .contact-icon {
   width: 14px;
   height: 14px;
-  color: #8E8E93;
+  color: #636366;
   flex-shrink: 0;
 }
 
@@ -411,16 +394,16 @@ body {
 
 .contact-row .contact-label {
   font-size: clamp(9px, 2.2vw, 10px);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: #AEAEB2 !important;
+  color: #8E8E93 !important;
   line-height: 1.3;
 }
 
 .contact-row .contact-value {
   color: #007AFF !important;
-  font-weight: 500;
+  font-weight: 600;
   font-size: clamp(12.5px, 3vw, 13.5px);
   flex-shrink: 0;
   white-space: nowrap;
@@ -433,12 +416,12 @@ body {
   justify-content: center;
   gap: 8px;
   width: 100%;
-  padding: clamp(10px, 1.4vh, 13px) 16px;
+  padding: clamp(11px, 1.5vh, 14px) 16px;
   margin-top: clamp(8px, 1.2vh, 12px);
   border-radius: 14px;
-  border: 1.5px solid rgba(0, 122, 255, 0.2);
-  background: rgba(0, 122, 255, 0.08) !important;
-  color: #007AFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: #007AFF !important;
+  color: #FFFFFF !important;
   font-size: clamp(13px, 3.2vw, 14px);
   font-weight: 600;
   cursor: pointer;
@@ -447,11 +430,12 @@ body {
   touch-action: manipulation;
   transition: background 0.15s ease, box-shadow 0.15s ease;
   min-height: 46px;
+  box-shadow: 0 4px 14px rgba(0, 122, 255, 0.35);
 }
 
 .save-contact-btn:hover {
-  background: rgba(0, 122, 255, 0.14) !important;
-  box-shadow: 0 2px 8px rgba(0, 122, 255, 0.1);
+  background: #0062CC !important;
+  box-shadow: 0 6px 18px rgba(0, 122, 255, 0.45);
 }
 
 .save-contact-btn:active {
